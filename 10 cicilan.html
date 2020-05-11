@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cicilan</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      Count = () =>{
+        let nominal = document.getElementById("nominal").value;
+        let bulan = document.getElementById("bulan").value;
+        let bunga = document.getElementById("bunga").value;
+        let cicil = (nominal / bulan) + ((nominal * bunga /100 ) / bulan);
+        document.getElementById('cicil').value="Rp " + cicil;
+      }
+    </script>
+    </head>
+  <body>
+    <div class="container" align="center">
+      <div class="row">
+        <div class="card col-sm-6 mx-auto"><br>
+          <div class="card-header bg-primary text-white">
+            <h4>Cicilan</h4>
+          </div>
+          <div class="card-body" align="left">
+            Nominal Pinjam
+            <input type="number" id="nominal" class="form-control"><br>
+            Lama Pinjam
+            <select id="bulan" class="form-control">
+              <option value="12">12 Bulan</option>
+                <option value="24">24 Bulan</option>
+                  <option value="36">36 Bulan</option>
+            </select>
+            <br>Bunga <input type="number" id="bunga" class="form-control">
+            <br><button type="button" class="btn btn-info btn-block" onclick="Count()" >HITUNG</button>
+            <br><input type="text" id="cicil" class="form-control" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

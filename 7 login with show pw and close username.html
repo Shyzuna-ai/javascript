@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+	   Login = () => {
+		     let Username = document.getElementById("Username").value;
+		     let Password = document.getElementById("Password").value;
+         let element = "";
+         if (Username=="Aaron" && Password=="1") {
+           element+='<div class="alert alert-success alert-dismissible">';
+           element+='<span class="close" data-dismiss="alert">&times;</span>';
+           element+='Data valid';
+           element+='</div>';
+         }else{
+           element+='<div class="alert alert-danger alert-dismissible">';
+           element+='<span class="close" data-dismiss="alert">&times;</span>';
+           element+='Data invalid';
+           element+='</div>';
+         }
+         document.getElementById('login-alert').innerHTML += element;
+	}
+</script>
+    </head>
+  <body class="bg-secondary">
+    <div class="container" align="center">
+      <div class="row">
+        <div class="card col-sm-6 mx-auto"><br>
+          <div class="card-header bg-primary text-white">
+            <h4>Login Form</h4>
+          </div><br>
+          <div class="form-group">
+            <div>
+            <label >Username </label>
+              <input type="text" class="form-contol" id="Username" placeholder="Enter Username">
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+            <label>Password </label>
+              <input type="password" class="form-contol" id="Password" placeholder="Password">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div id="login-alert">
+              <button type="button" class="btn btn-info" onclick="Login()">Login</button>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>PLayslist</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      let songs =["Comethru.mp3","Memories.mp3","Thinking Out Loud.mp3"];
+      let pic =["Comethru.jpg","mem.jpg","tol.jpg"];
+      let song = new Audio();
+      play=()=>{
+        song.play();
+      }
+      pause=()=>{
+        song.pause();
+      }
+      stop=()=>{
+        song.curentTime=0;
+        song.pause();
+      }
+      song1=()=>{
+        song.src = songs[0];
+        song.play();
+        $("#gambar img"),attr("src",pic[0]);
+      }
+      song2=()=>{
+        song.src = songs[1];
+        song.play();
+        $("#gambar img"),attr("src",pic[1]);
+      }
+      song3=()=>{
+        song.src = songs[2];
+        song.play();
+        $("#gambar img"),attr("src",pic[2]);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container" align="center">
+      <div class="row">
+        <div class="card col-sm-6 mx-auto"><br>
+          <div class="card-header bg-primary text-white">
+            <h4>Playlist</h4>
+          </div>
+            <div class="card-body">
+              <div  id="gambar">
+              <img src="Capture.JPG" class="rounded mx-auto d-block" style="width:300px;height:300px;">
+              </div>
+              <div class="control">
+                <div class="audio-cotrol btn-group col-sm d-block" role="group" aria-label="Basic Example">
+                  <button type="button" name="button" class="btn bg-info" onclick="play()">Play</button>
+                  <button type="button" name="button" class="btn bg-warning" onclick="pause()">Pause</button>
+                  <button type="button" name="button" class="btn bg-danger" onclick="stop()">Stop</button>
+                </div>
+              </div><br>
+              <div class="listmus" align="left" style="cursor: pointer">
+                <div class="list-group">
+                  <a class="list-group-item list-group-item-action" onclick="song1();">Comethruu</a>
+                    <a class="list-group-item list-group-item-action" onclick="song2();">Memories</a>
+                      <a class="list-group-item list-group-item-action" onclick="song3();">Thinking Out Loud</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+      Count = () =>{
+        let berat = document.getElementById("berat").value;
+        let tinggi = document.getElementById("tinggi").value;
+        let hasil = berat / (tinggi*tinggi);
+        if(hasil < 18.500000){
+          document.getElementById('hasil').value="Anda kurus";
+        }else if (hasil >= 18.500000 && hasil <22.900000 ){
+          document.getElementById('hasil').value="Anda Normal";
+        }else if(hasil >= 23 && hasil < 24.900000){
+          document.getElementById('hasil').value="Anda Gemuk";
+        }else if (hasil >= 25){
+          document.getElementById('hasil').value="Anda Obesitas";
+        }
+        }
+    </script>
+    </head>
+  <body  align="center">
+    <div class="container">
+      <div class="row">
+        <div class="card col-sm-4">
+          <div class="card-header bg-primary text-white" align="center" font="fantasy">Body Mass Index</div>
+          <div class="form-group"><br>
+            <label>Berat</label>
+            <input type="number" id="berat" class="form-control" placeholder="kilogram">
+          </div>
+          <div class="form-group">
+            <label>Tinggi</label>
+            <input type="number" id="tinggi" class="form-control" placeholder="meter">
+          </div>
+          <div class="form-group">
+            <button type="button" onclick="Count()" class="btn btn-info">HITUNG</button><br>
+            <div><br>
+              <div>
+                Hasil
+                <input type="text" id="hasil" class="form-control" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
